@@ -1,0 +1,12 @@
+These are the main features of the project:
+
+1) User can register a new account, and login using that account.
+2) User can search for an particular product.
+3) User can view additional details of a specific product.
+4) User can add/remove items from cart.
+5) User can place an order for the items he has in cart.
+6) User can generate an invoice for a particular order he/she made.
+
+Future work:
+1) Create a Recommender System.
+2) Add sorting, and filtering features.
