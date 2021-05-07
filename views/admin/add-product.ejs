@@ -1,0 +1,21 @@
+<%- include('../includes/head.ejs') %>
+    <title><%= title %></title>
+</head>
+<body style="background-image: url(https://cdn.wallpapersafari.com/17/5/Zd3rxI.jpg); background-size: cover;">
+  <%- include('../includes/nav.ejs') %>
+
+    <main>
+        <form action="/admin/add" method="POST" style="margin-left: 40%; margin-top: 8%;">
+            <p>Title</p>
+            <input type="text" name="title" style="width: 30%;">
+            <p>Price</p>
+            <input type="text" name="price" style="width: 30%;">
+            <p>Image</p>
+            <input type="text" name="img" style="width: 30%;">
+            <p>Desc</p>
+            <input type="text" name="desc" style="width: 30%;"><br><br>
+            <button type="submit" class="btn btn-danger" style="margin-left: 8%;">Add Product</button>
+        </form>
+    </main>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<%- include('includes/head.ejs') %>
+    <title><%= title %></title>
+</head>
+
+<body style="background-color: lightgrey;">
+    <%- include('includes/nav.ejs') %>
+    <main>
+      <% if(errorMessage) { %>
+        <div class="alert alert-danger" role="alert">
+          <h7 style="margin-left: 45%;"><%= errorMessage %></h7>      
+        </div>
+        <% } %>
+        <form action="/signup" method="POST">
+            <div class="col">
+              <div class="col">
+                <input type="text" class="form-control" placeholder="Email" name='email' style="width: 20rem; margin-left: 37%; margin-top: 10%;">
+              </div><br>
+              <div class="col">
+                <input type="password" class="form-control" placeholder="Password" name='pw' style="width: 20rem; margin-left: 37%;">
+              </div><br>
+              <div class="col">
+                <input type="password" class="form-control" placeholder="Confirm Password" name='cfpw' style="width: 20rem; margin-left: 37%;">
+              </div>
+              <button class='btn btn-primary' type="submit" style="width: 7rem; margin-left: 45%; margin-top: 2%;">Register</button>
+            </div>
+          </form>
+    </main>
+    <div style="margin-top: 10%;">
+      <%- include('includes/footer.ejs') %>
+    </div>
+</body>
