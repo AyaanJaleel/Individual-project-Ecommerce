@@ -1,0 +1,79 @@
+<%- include('includes/head.ejs') %>
+    <title><%= title %></title>
+    <style>
+            body {
+    background: #E0E0E0
+}
+
+.details {
+    border: 1.5px solid grey;
+    color: #212121;
+    width: 100%;
+    height: auto;
+    box-shadow: 0px 0px 10px #212121
+}
+
+.cart {
+    background-color: #212121;
+    color: white;
+    margin-top: 10px;
+    font-size: 12px;
+    font-weight: 900;
+    width: 100%;
+    height: 39px;
+    padding-top: 9px;
+    box-shadow: 0px 5px 10px #212121
+}
+
+.card {
+    width: fit-content
+}
+
+.card-body {
+    width: fit-content
+}
+
+.btn {
+    border-radius: 0
+}
+
+.img-thumbnail {
+    border: none
+}
+
+.card {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, .2);
+    border-radius: 5px;
+    padding-bottom: 10px
+}    
+    </style>
+</head>
+
+<body>
+        <%- include('includes/nav.ejs') %>
+        <main>
+                <div class='container-fluid'>
+                        <div class="card mx-auto col-md-3 col-10 mt-5"> <img class='mx-auto img-thumbnail' src="<%= product.imageUrl%>" width="auto" height="auto" />
+                            <div class="card-body text-center mx-auto">
+                                <div class='cvp'>
+                                    <h3 class="card-title font-weight-bold"><%= product.title %></h3>
+                                    <h7 class="card-title font-weight-bold"><%= product.desc %></h7>
+                                    <p class="card-text">Price: £<%= product.price%></p> 
+                                    <% if (isAuthenticated) { %>
+                                        <form action="/cart" method="POST"><br>
+                                            <button class='btn cart px-auto'>Add to Cart</button>
+                                            <input type="hidden" name='productId' value='<%= product._id %>'>
+                                        </form>
+                                    <% } %>
+                                    <a class='btn cart px-auto' href="/products">Back</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        </main>
+        <div style="margin-top: 10%;">
+            <%- include('includes/footer.ejs') %>
+          </div>
+</body>
+
+</html>
